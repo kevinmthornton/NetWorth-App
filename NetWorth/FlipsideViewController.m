@@ -105,23 +105,21 @@
     [self.quantityArray replaceObjectAtIndex:textFieldUpdated.tag withObject:textFieldUpdated.text];
 }
 
-// get code from httpjsonrequest to list out labels in order
+// update core data based on the order in the array
 - (IBAction)updateSymbolAmounts {
     for (int arrayIncrementor = 0; arrayIncrementor <= ([self.symbolArray count] -1 ); arrayIncrementor++) {
-        // update core data based on the order in the array
-        
         NSError *error = nil;
         
-        //This is your NSManagedObject subclass
+        // NSManagedObject subclass
         Securities *security = nil;
         
-        //Set up to get the symbol you want to update
+        // set up to get the symbol you want to update
         NSFetchRequest * request = [[NSFetchRequest alloc] init];
         [request setEntity:[NSEntityDescription entityForName:@"Securities" inManagedObjectContext:self.managedObjectContext]];
         // set the predicate to search for the symbol from the symbolArray
         [request setPredicate:[NSPredicate predicateWithFormat:@"symbol=%@",[self.symbolArray objectAtIndex:arrayIncrementor]]];
         
-        //Ask for it
+        // ask for it
         security = [[self.managedObjectContext executeFetchRequest:request error:&error] lastObject];
         
         if (error) {
@@ -133,10 +131,6 @@
             //Nothing there to update
             NSLog(@"didn't find any security");
         }
-        
-        
-        // REMOVING FROM ARRAY BUT, not can't iterate over array because we are missing this number!!!!
-        
         
         if ([[self.quantityArray objectAtIndex:arrayIncrementor] isKindOfClass:[NSString class]]) {
             // this is a string so, format it correctly
@@ -154,9 +148,6 @@
     
     // performFetch after SAVE so we can refill the fetched results controller
     [self.fetchedResultsController performFetch:nil];
-    
-    // call list symbols to reload the results in the scroll view
-    // [self listSymbolsInScrollView];
     
 }
 

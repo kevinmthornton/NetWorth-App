@@ -7,7 +7,7 @@
 
 // for shadowing and borders
 #import <QuartzCore/QuartzCore.h>
-// for attributedText
+// for attributedText - TODO!
 #import <CoreText/CoreText.h>
 
 // not used at the moment but, could be in the future if we need more specific data
@@ -34,7 +34,7 @@
     [super viewDidLoad];
     [self.view setBackgroundColor:steelBlueColor];
     
-    // set up the top label -- !!!!!! use NSAutoLayout eventually !!!!
+    // set up the top label -- TODO: use NSAutoLayout to keep in line?
     // create a label with which to attach the shadow
     UILabel *shadowLabel = [[UILabel alloc] init];
     [shadowLabel setFrame:CGRectMake(8,20,290,30)];
@@ -122,13 +122,11 @@
         
         // this for...in didn't work as reliably as the enumerateObjectsUsingBlock
         // send the Securities object to createLabel: coming out of the Core Data method
-//      float createStartY = 10;
-//        for(Securities *security in [self.fetchedResultsController fetchedObjects]) {
-//            [self createLabel:security startY:createStartY];
-//            createStartY +=40;
-//        }
-        // call displayNetWorth to get the final number of all the price * amount's added up
-        // [self displayNetWorth];
+        // float createStartY = 10;
+        // for(Securities *security in [self.fetchedResultsController fetchedObjects]) {
+        //     [self createLabel:security startY:createStartY];
+        //     createStartY +=40;
+        // }
     }
 } // end start up CD symbols
 
@@ -206,7 +204,7 @@
 
     NSArray *returnedArray = [[NSArray alloc] initWithObjects:symbol, valueString, change, nil];
     return returnedArray;
-}
+} // end getSecurityInfo
 
 // send in the symbolArray which holds symbol and price and Y position
 -(void)writeLabelToView:(NSArray *)symbolArray startY:(int)startY {
