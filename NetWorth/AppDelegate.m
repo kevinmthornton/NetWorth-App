@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "MainViewController.h"
+#import "FlipsideViewController.h"
 
 @implementation AppDelegate
 
@@ -16,11 +17,14 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     MainViewController *controller = (MainViewController *)self.window.rootViewController;
+    
+    // MainVC now has access to Core Data
     controller.managedObjectContext = self.managedObjectContext;
+    
     return YES;
 }
 							
