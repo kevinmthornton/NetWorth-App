@@ -82,14 +82,14 @@
             
             // REMOVE button w/ TAG for removal of this security
             // create a - button to get rid of this security all together
-            // when tapped, it executes removeSymbolFromArray which takes it out and re-draws this scrollview with a new fetch
+            // when tapped, it executes removeSymbolFromCoreData which takes it out and re-draws this scrollview with a new fetch
             UIButton *securityRemoveButton = [[UIButton alloc] init];
             securityRemoveButton.tag = tagIncrement;
             securityRemoveButton.frame = CGRectMake(210, startY, 30, 30);
             [securityRemoveButton setTitle:@"-" forState:UIControlStateNormal];
             [securityRemoveButton setBackgroundColor:[UIColor redColor]];
             [securityRemoveButton setUserInteractionEnabled:YES];
-            [securityRemoveButton addTarget:self action:@selector(removeSymbolFromArray:) forControlEvents:UIControlEventTouchDown];
+            [securityRemoveButton addTarget:self action:@selector(removeSymbolFromCoreData:) forControlEvents:UIControlEventTouchDown];
             [self.symbolScrollViewContainer addSubview:securityRemoveButton];
             
             
@@ -146,6 +146,7 @@
         } else {
             [security setQuantity:[self.quantityArray objectAtIndex:arrayIncrementor]];
         }
+        
     }
     
     // save
@@ -182,9 +183,28 @@
 }
 
 // - button next to symbols that will remove from core data and re-draw table with a new fetch
--(void)removeSymbolFromArray:(UIButton *)symbolToBeRemoved {
-    [self.quantityArray removeObjectAtIndex:symbolToBeRemoved.tag];
-    [self updateSymbolAmounts];
+-(void)removeSymbolFromCoreData:(UIButton *)symbolToBeRemoved {
+    // get the text and quantity from the array's
+    NSString *symbolTextToBeRemoved = [self.symbolArray objectAtIndex:symbolToBeRemoved.tag];
+    NSString *symbolQuantityToBeRemoved = [self.quantityArray objectAtIndex:symbolToBeRemoved.tag];
+    
+    // set up the security fetch with predicate
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"Securities" inManagedObjectContext:self.managedObjectContext]];
+    NSError *error = nil;
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"symbol == %@ AND quantity = %@", symbolTextToBeRemoved, symbolQuantityToBeRemoved];
+    [request setPredicate:predicate];
+    NSArray *results = [self.managedObjectContext executeFetchRequest:request error:&error];
+    
+    Securities *securityToBeRemoved = [results firstObject];
+    
+    // remove from core data
+    [self.managedObjectContext deleteObject:securityToBeRemoved];
+    
+    if (![self.managedObjectContext save:&error]){
+        NSLog(@"Error ! %@", error);
+    }
+    // redraw view so it gets new values
     [self listSymbolsInScrollView];
 }
 

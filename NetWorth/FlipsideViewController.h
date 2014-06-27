@@ -40,10 +40,10 @@
 - (IBAction)updateSymbolAmounts;
 
 // add button to put symbol into CD
-- (IBAction)addSymbolToCoreData:(id)sender;
+- (IBAction)addSymbolToCoreData;
 
 // tap a button and this symbol is removed from the list
--(void)removeSymbolFromArray:(UIButton *)symbolToBeRemoved;
+-(void)removeSymbolFromCoreData:(UIButton *)symbolToBeRemoved;
 
 // go back to main view
 - (IBAction)done:(id)sender;
