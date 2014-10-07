@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>396EEA9B-C05E-4818-A71F-6D6632B29A62</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NetWorth</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FD131000-327F-4116-8EAB-767948D64AF5</key>
+		<string>https://github.com/kevinmthornton/NetWorth-App.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NetWorth.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FD131000-327F-4116-8EAB-767948D64AF5</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kevinmthornton/NetWorth-App.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FD131000-327F-4116-8EAB-767948D64AF5</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FD131000-327F-4116-8EAB-767948D64AF5</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NetWorth</string>
+		</dict>
+	</array>
+</dict>
+</plist>
