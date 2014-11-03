@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
+#import <QuartzCore/QuartzCore.h>
 
 @class FlipsideViewController;
 
@@ -16,7 +16,7 @@
 @end
 
 @interface FlipsideViewController : UIViewController
-@property (strong, nonatomic) AppDelegate *appDelegate;
+@property (weak, nonatomic) IBOutlet UIButton *updateBtn;
 // for CD, handed down from AppDelegate
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;

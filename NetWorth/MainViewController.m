@@ -20,7 +20,7 @@
 @end
 
 @implementation MainViewController
-@synthesize netWorthAmountLabel = _netWorthAmountLabel;
+// @synthesize netWorthAmountLabel = _netWorthAmountLabel;
 @synthesize totalNetWorthString = _totalNetWorthString;
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize fetchedResultsController = _fetchedResultsController;
@@ -71,6 +71,10 @@
     self.noSymbolTextField = [[UITextView alloc] init];
     // clear out the noSymbolTextField
     self.noSymbolTextField.text = @"";
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 // 2
@@ -268,10 +272,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // this is in the Attributes Inspector of the Seque between main and flipside
     if ([[segue identifier] isEqualToString:@"showFlip"]) {
+        // segue.destinationViewController is an 'id' so we have to type cast it for the delegate property
+        FlipsideViewController *vc = segue.destinationViewController;
+        vc.managedObjectContext = self.managedObjectContext;
+        vc.delegate = self;
+        
         // why does this work from here and not viewDidLoad???
-        [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
+        //[[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
         // set the delegate to MainViewController so we can execute done:
-        [[segue destinationViewController] setDelegate:self];
+         //[[segue destinationViewController] setDelegate:self];
     }
 }
 

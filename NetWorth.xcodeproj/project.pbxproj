@@ -26,6 +26,7 @@
 		2C4EB562191ACD1500200B52 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C4EB560191ACD1500200B52 /* InfoPlist.strings */; };
 		2C4EB564191ACD1500200B52 /* NetWorthTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EB563191ACD1500200B52 /* NetWorthTests.m */; };
 		2C4EB56F191C4ABC00200B52 /* Securities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C4EB56E191C4ABC00200B52 /* Securities.m */; };
+		B601122119F8A1B700BC24B1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B601122019F8A1B700BC24B1 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		2C4EB563191ACD1500200B52 /* NetWorthTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetWorthTests.m; sourceTree = "<group>"; };
 		2C4EB56D191C4ABC00200B52 /* Securities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Securities.h; sourceTree = "<group>"; };
 		2C4EB56E191C4ABC00200B52 /* Securities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Securities.m; sourceTree = "<group>"; };
+		B601122019F8A1B700BC24B1 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B601122119F8A1B700BC24B1 /* QuartzCore.framework in Frameworks */,
 				2C4EB532191ACD1400200B52 /* CoreGraphics.framework in Frameworks */,
 				2C4EB536191ACD1400200B52 /* CoreData.framework in Frameworks */,
 				2C4EB534191ACD1400200B52 /* UIKit.framework in Frameworks */,
@@ -114,6 +117,7 @@
 		2C4EB52E191ACD1400200B52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B601122019F8A1B700BC24B1 /* QuartzCore.framework */,
 				2C4EB52F191ACD1400200B52 /* Foundation.framework */,
 				2C4EB531191ACD1400200B52 /* CoreGraphics.framework */,
 				2C4EB533191ACD1400200B52 /* UIKit.framework */,

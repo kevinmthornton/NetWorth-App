@@ -8,6 +8,7 @@
 
 #import "FlipsideViewController.h"
 #import "Securities.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface FlipsideViewController ()
 
@@ -15,9 +16,9 @@
 
 @implementation FlipsideViewController
 
+
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize fetchedResultsController = _fetchedResultsController;
-@synthesize appDelegate;
 @synthesize symbolTextField = _symbolTextField;
 @synthesize quantityTextField = _quantityTextField;
 @synthesize symbolScrollViewContainer = _symbolScrollViewContainer;
@@ -99,6 +100,10 @@
         } // for
     } // else
 } // end listSymbolsInScrollView
+
+-(BOOL)prefersStatusBarHidden {
+    return YES;
+}
 
 -(void)updateSymbolArray:(UITextField *)textFieldUpdated{
    // NSLog(@"textfield value: %@ - tag: %ld", [textFieldUpdated text], (long)textFieldUpdated.tag);
@@ -212,13 +217,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    /*
-     this is set up in MainViewController > prepareForSegue:
-     // this works but, up for debate on corect coding
-     // set up self.managedObjectContext from AppDelegate
-     appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-     self.managedObjectContext = appDelegate.managedObjectContext;
-    */
     // set up the fetchedResultsController
     NSString *entitySecurities = @"Securities"; // The entity in your model
     NSFetchRequest *requestSecurities = [NSFetchRequest fetchRequestWithEntityName:entitySecurities];
@@ -234,6 +232,11 @@
     // set up the two arrays for editing
     self.symbolArray = [[NSMutableArray alloc] init];
     self.quantityArray = [[NSMutableArray alloc] init];
+    
+    // Add nice button stuff
+    self.updateBtn.layer.cornerRadius = 5;
+    self.updateBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
+    self.updateBtn.layer.borderWidth = 1;
 }
 
 
