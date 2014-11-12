@@ -5,16 +5,11 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-<<<<<<< HEAD
-	<string>54044D20-DE4E-4B52-8512-50AFE62AD8B4</string>
-=======
-	<string>396EEA9B-C05E-4818-A71F-6D6632B29A62</string>
->>>>>>> FETCH_HEAD
+	<string>92EBD68C-47C7-4F97-85A8-C3D141161F71</string>
 	<key>IDESourceControlProjectName</key>
 	<string>NetWorth</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-<<<<<<< HEAD
 		<key>A9E99AB5663F2EEE8F76B78A34A01765F54D4D5F</key>
 		<string>https://github.com/kevinmthornton/NetWorth-App.git</string>
 	</dict>
@@ -23,41 +18,21 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>A9E99AB5663F2EEE8F76B78A34A01765F54D4D5F</key>
-=======
-		<key>FD131000-327F-4116-8EAB-767948D64AF5</key>
-		<string>https://github.com/kevinmthornton/NetWorth-App.git</string>
-	</dict>
-	<key>IDESourceControlProjectPath</key>
-	<string>NetWorth.xcodeproj/project.xcworkspace</string>
-	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
-	<dict>
-		<key>FD131000-327F-4116-8EAB-767948D64AF5</key>
->>>>>>> FETCH_HEAD
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/kevinmthornton/NetWorth-App.git</string>
 	<key>IDESourceControlProjectVersion</key>
-<<<<<<< HEAD
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
 	<string>A9E99AB5663F2EEE8F76B78A34A01765F54D4D5F</string>
-=======
-	<integer>110</integer>
-	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>FD131000-327F-4116-8EAB-767948D64AF5</string>
->>>>>>> FETCH_HEAD
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-<<<<<<< HEAD
 			<string>A9E99AB5663F2EEE8F76B78A34A01765F54D4D5F</string>
-=======
-			<string>FD131000-327F-4116-8EAB-767948D64AF5</string>
->>>>>>> FETCH_HEAD
 			<key>IDESourceControlWCCName</key>
 			<string>NetWorth</string>
 		</dict>
